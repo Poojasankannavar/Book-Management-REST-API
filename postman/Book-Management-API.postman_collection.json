@@ -1,0 +1,75 @@
+{
+  "info": {
+    "_postman_id": "8a0c6a70-3bcb-4f31-a5ac-8ef47b4bca11",
+    "name": "Book Management REST API",
+    "description": "CRUD requests for the local Express API at http://localhost:3000",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get all books",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:3000/books"
+      }
+    },
+    {
+      "name": "Get book by ID (1)",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:3000/books/1"
+      }
+    },
+    {
+      "name": "Add a book",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Clean Code\",\n  \"author\": \"Robert C. Martin\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "http://localhost:3000/books"
+      }
+    },
+    {
+      "name": "Update book (ID 1)",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"The Alchemist - Updated\",\n  \"author\": \"Paulo Coelho\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "http://localhost:3000/books/1"
+      }
+    },
+    {
+      "name": "Delete book (ID 2)",
+      "request": {
+        "method": "DELETE",
+        "url": "http://localhost:3000/books/2"
+      }
+    }
+  ]
+}
